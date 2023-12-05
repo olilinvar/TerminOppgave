@@ -1,20 +1,3 @@
-<?php
-$servername = "192.168.234.11";
-$username = "localhost";
-$password = "password";
-$dbname = "mydb";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +9,9 @@ echo "Connected successfully";
 </head>
 
 <body>
+    <?php
+    include("db_connect.php");
+    ?>
     <div class="flexWrap">
         <div class="topLeftWrap">
             <div class="top">
