@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
     <?php
     include("db_connect.php");
     ?>
+</head>
+
+<body>
     <div class="flexWrap">
         <div class="topLeftWrap">
             <div class="top">
