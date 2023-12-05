@@ -14,7 +14,7 @@ let buildings = {
     },
     farm: {
         amount: 0,
-        cost: 800,
+        cost: 600,
         cps: 8,
         elementIds: {
             cost: "farminfo_cost",
@@ -23,7 +23,7 @@ let buildings = {
     },
     mine: {
         amount: 0,
-        cost: 12000,
+        cost: 10000,
         cps: 47,
         elementIds: {
             cost: "mineinfo_cost",
