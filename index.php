@@ -41,7 +41,7 @@
                     <div class="building-stats">
                         <div class="building-stats-box">
                             <div class="building-stats-box-top"><p>Farm</p></div>
-                            <div class="building-stats-box-bottom"><p><span id="farminfo_cost">800</span>&#127850;</p></div>
+                            <div class="building-stats-box-bottom"><p><span id="farminfo_cost">600</span>&#127850;</p></div>
                         </div>
                         <div class="building-stats-amount" id="farminfo_owned">0</div>
                     </div>
@@ -51,7 +51,7 @@
                     <div class="building-stats">
                         <div class="building-stats-box">
                             <div class="building-stats-box-top"><p>Mine</p></div>
-                            <div class="building-stats-box-bottom"><p><span id="mineinfo_cost">12000</span>&#127850;</p></div>
+                            <div class="building-stats-box-bottom"><p><span id="mineinfo_cost">10000</span>&#127850;</p></div>
                         </div>
                         <div class="building-stats-amount" id="mineinfo_owned">0</div>
                     </div>
@@ -61,7 +61,7 @@
                     <div class="building-stats">
                         <div class="building-stats-box">
                             <div class="building-stats-box-top"><p>Factory</p></div>
-                            <div class="building-stats-box-bottom"><p><span id="factoryinfo_cost">130000</span>&#127850;</p></div>
+                            <div class="building-stats-box-bottom"><p><span id="factoryinfo_cost">120000</span>&#127850;</p></div>
                         </div>
                         <div class="building-stats-amount" id="factoryinfo_owned">0</div>
                     </div>

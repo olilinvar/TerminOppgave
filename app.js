@@ -33,7 +33,7 @@ let buildings = {
     },
     factory: {
         amount: 0,
-        cost: 130000,
+        cost: 120000,
         cps: 260,
         elementIds: {
             cost: "factoryinfo_cost",
