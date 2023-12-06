@@ -1,32 +1,3 @@
-function login() {
-    // Get bakeryname from user input
-    const bakeryname = prompt("Enter your bakeryname: ");
-
-    // Send a POST request to login.php with bakeryname
-    fetch("login.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: `bakeryname=${bakeryname}`,
-    })
-    .then(response => response.text())
-    .then(result => {
-        if (result === "success") {
-            // Login successful, you may redirect or perform other actions
-            alert("Login successful!");
-        } else {
-            alert("Login failed. Bakeryname not found.");
-        }
-    })
-    .catch(error => {
-        console.error("Error:", error);
-    });
-}
-
-// Example usage (e.g., on a button click)
-document.getElementById("loginBtn").addEventListener("click", login);
-
 let totalCookies = 0;
 let cookiesAddedPerClick = 1;
 let cookiesPerSecond = 0;
@@ -82,14 +53,14 @@ let buildings = {
 
 // The cookie itself. It calls the cookieIncrement function when pressed.
 document.getElementById("btn").addEventListener("click", cookieIncrement);
-// Event listeners that calls the buyBulding function with the corresponding building type
+// Event listeners that call the buyBuilding function with the corresponding building type
 document.getElementById("1").addEventListener("click", () => buyBuilding("grandma"));
 document.getElementById("2").addEventListener("click", () => buyBuilding("farm"));
 document.getElementById("3").addEventListener("click", () => buyBuilding("mine"));
 document.getElementById("4").addEventListener("click", () => buyBuilding("factory"));
 document.getElementById("5").addEventListener("click", () => buyBuilding("bank"));
 
-//nameBakery prompts the bakery name. This function is disabled as of now.
+// nameBakery prompts the bakery name. This function is disabled as of now.
 function nameBakery() {
     bakeryName = prompt("What is the name of your bakery? ");
     if (bakeryName === "") {
@@ -100,17 +71,17 @@ function nameBakery() {
     }
 }
 
-// adds cookiesAddedPerClick to totalCookies, console.logs it and updates the hmtl.
- function cookieIncrement() {
+// adds cookiesAddedPerClick to totalCookies, console.logs it, and updates the HTML.
+function cookieIncrement() {
     totalCookies += cookiesAddedPerClick;
     console.log(totalCookies + (totalCookies === 1 ? " cookie" : " cookies"));
     document.getElementById("cookiecount").innerHTML = totalCookies;
 }
 
 function buyBuilding(buildingType) {
-    // Checks if you have enough cookies to buy a the building
+    // Checks if you have enough cookies to buy the building
     if (totalCookies >= buildings[buildingType].cost) {
-        // Deducts the cost of buildig bought from totalCookies
+        // Deducts the cost of building bought from totalCookies
         totalCookies -= buildings[buildingType].cost;
         // Adds a building
         buildings[buildingType].amount++;
@@ -130,13 +101,39 @@ function buyBuilding(buildingType) {
         alert("Not enough cookies to buy " + buildingType);
     }
 }
-// Function thats adds cookiesPerSecound each secound
+
+// Function that adds cookiesPerSecond each second
 setInterval(function () {
     totalCookies += cookiesPerSecond;
     document.getElementById("cookiecount").innerHTML = totalCookies;
 }, 1000);
 
+// The login function
+function login() {
+    // Get bakeryname from user input
+    const bakeryname = prompt("Enter your bakeryname: ");
 
+    // Send a POST request to login.php with bakeryname
+    fetch("login.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `bakeryname=${bakeryname}`,
+    })
+    .then(response => response.text())
+    .then(result => {
+        if (result === "success") {
+            // Login successful, you may redirect or perform other actions
+            alert("Login successful!");
+        } else {
+            alert("Login failed. Bakeryname not found.");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+}
 
-
-// Jeg må sette opp database på virtuell maskin og koble til koden
+// Example usage (e.g., on a button click)
+document.getElementById("loginBtn").addEventListener("click", login);
