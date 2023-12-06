@@ -11,7 +11,7 @@
     ?>
 </head>
 
-<body>
+<body onload="login()">
     <div class="flexWrap">
         <div class="topLeftWrap">
             <div class="top">

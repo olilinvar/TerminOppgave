@@ -1,3 +1,32 @@
+function login() {
+    // Get bakeryname from user input
+    const bakeryname = prompt("Enter your bakeryname: ");
+
+    // Send a POST request to login.php with bakeryname
+    fetch("login.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `bakeryname=${bakeryname}`,
+    })
+    .then(response => response.text())
+    .then(result => {
+        if (result === "success") {
+            // Login successful, you may redirect or perform other actions
+            alert("Login successful!");
+        } else {
+            alert("Login failed. Bakeryname not found.");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+}
+
+// Example usage (e.g., on a button click)
+document.getElementById("loginBtn").addEventListener("click", login);
+
 let totalCookies = 0;
 let cookiesAddedPerClick = 1;
 let cookiesPerSecond = 0;
