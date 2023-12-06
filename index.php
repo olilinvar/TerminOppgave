@@ -18,7 +18,7 @@
                 <div id="cookiecount">0</div>
                 <div id="cpsHTML"></div>
                 <button id="btn"><img src="PerfectCookie.webp" alt="Cookie"></button>
-                <button onclick="login()">LOGIN</button>
+                <button id="loginBtn">LOGIN</button>
             </div>
         </div>
         <div class="right">
