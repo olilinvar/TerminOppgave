@@ -2,6 +2,7 @@ let totalCookies = 0;
 let cookiesAddedPerClick = 1;
 let cookiesPerSecond = 0;
 
+// Declaring all buildings
 let buildings = {
     grandma: {
         amount: 0,
@@ -50,13 +51,16 @@ let buildings = {
     },
 };
 
+// The cookie itself. It calls the cookieIncrement function when pressed.
 document.getElementById("btn").addEventListener("click", cookieIncrement);
+// Event listeners that calls the buyBulding function with the corresponding building type
 document.getElementById("1").addEventListener("click", () => buyBuilding("grandma"));
 document.getElementById("2").addEventListener("click", () => buyBuilding("farm"));
 document.getElementById("3").addEventListener("click", () => buyBuilding("mine"));
 document.getElementById("4").addEventListener("click", () => buyBuilding("factory"));
 document.getElementById("5").addEventListener("click", () => buyBuilding("bank"));
 
+//nameBakery prompts the bakery name. This function is disabled as of now.
 function nameBakery() {
     bakeryName = prompt("What is the name of your bakery? ");
     if (bakeryName === "") {
@@ -67,20 +71,26 @@ function nameBakery() {
     }
 }
 
-function cookieIncrement() {
+// adds cookiesAddedPerClick to totalCookies, console.logs it and updates the hmtl.
+ function cookieIncrement() {
     totalCookies += cookiesAddedPerClick;
     console.log(totalCookies + (totalCookies === 1 ? " cookie" : " cookies"));
     document.getElementById("cookiecount").innerHTML = totalCookies;
 }
 
 function buyBuilding(buildingType) {
+    // Checks if you have enough cookies to buy a the building
     if (totalCookies >= buildings[buildingType].cost) {
+        // Deducts the cost of buildig bought from totalCookies
         totalCookies -= buildings[buildingType].cost;
+        // Adds a building
         buildings[buildingType].amount++;
+        // Increases the cost of the building by 15%
         buildings[buildingType].cost = Math.round(buildings[buildingType].cost * 1.15);
+        // Adds CPS
         cookiesPerSecond += buildings[buildingType].cps;
 
-        // Oppdater DOM
+        // Updates DOM
         document.getElementById("cookiecount").innerHTML = totalCookies;
         document.getElementById(buildings[buildingType].elementIds.cost).innerHTML = buildings[buildingType].cost;
         document.getElementById(buildings[buildingType].elementIds.owned).innerHTML = buildings[buildingType].amount;
@@ -91,7 +101,7 @@ function buyBuilding(buildingType) {
         alert("Not enough cookies to buy " + buildingType);
     }
 }
-
+// Function thats adds cookiesPerSecound each secound
 setInterval(function () {
     totalCookies += cookiesPerSecond;
     document.getElementById("cookiecount").innerHTML = totalCookies;
