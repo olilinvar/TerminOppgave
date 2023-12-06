@@ -8,8 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<script src="app.js"></script>
-<body onload="login()">
+<body>
 <div class="flexWrap">
         <div class="topLeftWrap">
             <div class="top">
@@ -19,6 +18,7 @@
                 <div id="cookiecount">0</div>
                 <div id="cpsHTML"></div>
                 <button id="btn"><img src="PerfectCookie.webp" alt="Cookie"></button>
+                <button onclick="login()">LOGIN</button>
             </div>
         </div>
         <div class="right">
@@ -74,9 +74,9 @@
                         <div class="building-stats-amount" id="bankinfo_owned">0</div>
                     </div>
                 </button>
-
             </div>
         </div>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>
