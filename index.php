@@ -1,3 +1,4 @@
+<?php include("db_connect.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,13 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <?php
-    include("db_connect.php");
-    ?>
 </head>
-
 <body onload="login()">
-    <div class="flexWrap">
+<div class="flexWrap">
         <div class="topLeftWrap">
             <div class="top">
                 <div id="bakeryname"></div>
@@ -81,6 +78,6 @@
         </div>
     </div>
     <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
-
 </html>
