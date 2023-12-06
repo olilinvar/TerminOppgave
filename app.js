@@ -110,6 +110,7 @@ setInterval(function () {
 
 // The login function
 function login() {
+    console.log("hello")
     // Get bakeryname from user input
     const bakeryname = prompt("Enter your bakeryname: ");
 
