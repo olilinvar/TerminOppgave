@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script src="app.js"></script>
 <body onload="login()">
 <div class="flexWrap">
         <div class="topLeftWrap">
@@ -77,6 +78,5 @@
             </div>
         </div>
     </div>
-    <script src="app.js"></script>
 </body>
 </html>
